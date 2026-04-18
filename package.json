@@ -1,0 +1,44 @@
+{
+  "name": "@browser-use/root",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Browser automation framework for AI agents",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "npm run build --workspaces",
+    "test": "npm run test --workspaces",
+    "lint": "npm run lint --workspaces",
+    "format": "prettier --write \"packages/*/src/**/*.ts\"",
+    "dev": "npm run dev --workspace=@browser-use/core"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.13.0",
+    "@typescript-eslint/parser": "^6.13.0",
+    "eslint": "^8.55.0",
+    "prettier": "^3.1.0",
+    "typescript": "^5.3.0"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/anthropics/browser-use.git"
+  },
+  "keywords": [
+    "browser",
+    "automation",
+    "ai",
+    "agent",
+    "playwright",
+    "scraping",
+    "testing",
+    "llm",
+    "openai",
+    "anthropic"
+  ],
+  "author": "",
+  "license": "MIT"
+}

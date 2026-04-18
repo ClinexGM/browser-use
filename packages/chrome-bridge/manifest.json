@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "Hermes Browser Bridge",
+  "version": "1.0.0",
+  "description": "Bridge between Hermes AI agent and your Chrome browser — uses your existing sessions",
+  "permissions": ["tabs", "scripting", "activeTab", "tabGroups", "storage"],
+  "host_permissions": ["<all_urls>"],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "content_scripts": [{
+    "js": ["content.js"],
+    "matches": ["<all_urls>"],
+    "run_at": "document_idle"
+  }],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'; connect-src 'self' ws://127.0.0.1:19223; style-src 'self' 'unsafe-inline';"
+  },
+  "action": {
+    "default_title": "Hermes Bridge"
+  },
+  "minimum_chrome_version": "116"
+}
